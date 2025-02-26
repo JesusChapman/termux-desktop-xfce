@@ -1,67 +1,39 @@
 # termux-desktop-xfce
-
-# ¡Atención!
- Actualmente estoy trabajando en una gran actualización para finales de este año (o incluso antes), ¡con grandes mejoras en la interfaz, temas y funciones geniales!
-
-## Tareas
- - Rediseño en temas de la interfaz.
- - Buscar una alternativa más ligera a Papirus icons que siga el esquema de Material Desing
- - agregar una bonita pantalla de bienvenida que ayudará al usuario a dar sus primeros pasos (configuración y agregar software adicional), también puede elegir qué navegador desea usar por defecto (Esto le dará una experiencia más amigable, similar a una distribución GNU/Linux)
- - intentar empaquetar todas las modificaciones en paquetes, no modifique $HOME para comodidad del usuario.
- - ¡Y muchas sorpresas más!
-
- Gracias por su atención, puede continuar con la descripción del proyecto.
-
 Set up a beautiful xfce desktop in termux 
 
-README in English:
 
-https://github.com/Yisus7u7/termux-desktop-xfce/blob/main/README-en.md
+# Attention!
+  I'm currently working on a big update for the end of this year (or even sooner), with big improvements to the interface, themes and cool features!
 
-## Requisitos 
+ ## Tasks
+  - Redesign in interface themes.
+  - Look for a lighter alternative to Papirus icons that follows the Material Design scheme
+  - add a nice welcome screen that will help the user to get started (configuration and add additional software), you can also choose which browser you want to use by default (This will give you a more user friendly experience, similar to a GNU/Linux distribution)
+  - try to pack all modifications in packages, do not modify $HOME for user convenience.
+  - And many more surprises!
 
-`No Necesita permisos root`
+  Thank you for your attention, you can continue with the description of the project.
 
-Android 7, 8, 9, 10, 11 o 12
+  
+## Requirements
 
-Termux : https://f-droid.org/en/packages/com.termux/
+- No root permission is required to make this work
+- an Android 7+ phone
+- [Termux (F-Droid)](https://f-droid.org/en/packages/com.termux/)
+> Termux from Google Play is unmaintained due to API requirements, use the F-Droid one instead.
+- 1GB of RAM (minimum) 2GB of RAM (recommended)
+- [VNC Client](https://play.google.com/store/apps/details?id=com.realvnc.viewer.android)
 
-1 GB de ram mínimo, 2 GB recomendado 
+> NOTE: You can also use xserver-xsdl, bvnc pro or kali-Kex
 
-1 GB de espacio 
+# What is this?
 
-Un cliente vnc con el cual conectarse, 
-Puedes usar este :
+This is an advanced configuration of termux x11, rich in features to be highly functional, 
+good looking, highly customizable and with very good optimization, this was inspired by @Manjaro [manjaro-site](https://manjaro.org) and from @adi1090x 's [termux-desktop](https://github.com/adi1090x/termux-desktop) , resulting in a highly useful and optimized desktop. 
 
-https://play.google.com/store/apps/details?id=com.realvnc.viewer.android
+# Screenshots:
 
-También puedes usar xserver-xsdl, bvnc pro y 
-kali-Kex
-
-> Nota : el termux de la play store es desmantenido 
-y no recibe actualizaciones, no lo uses. tiene 
-bugs, usa el del enlace que deje arriba 
-
-# Que es? 
-
-Esto es una configuración avanzada de termux x11, 
-rica en funciones para ser altamente funcional,
-con un aspecto atractivo, altamente personalizable
-y con una optimización muy buena, esto fue 
-inspirado en :
-
-https://manjaro.org
-
-Y
-
-https://github.com/adi1090x/termux-desktop
-
-Haciendo como resultado un escritorio altamente
-útil y optimizado. 
-
-# capturas de pantalla :
-
-> versión actual : 5.0.3 update
+> Current version of this project: v5.0.3
 
 ![escritorio](./fotos/desktop.png)
 ![escritorio](./fotos/desktop2.png)
@@ -70,65 +42,69 @@ Haciendo como resultado un escritorio altamente
 ![escritorio](./fotos/desktop6.png)
 ![escritorio](./fotos/chat_and_youtube.png)
 
-## Temas
+# Themes
 
-Aparte de las capturas de pantalla anteriores, hay muchos
-más temas que usted podrá cambiar desde ajustes, también
-otros fondos de pantalla
+Aside from the screenshots above, there are many
+more themes you can change from settings.
+There's tons of wallpapers too!
 
 ![graphite](./fotos/theme1.png)
 ![Colliod](./fotos/theme2.png)
 
-> pocas apps?, he echo una configuración para 
-> ejecutar las apps de una distro proot en termux x11! 
-> Un ejemplo :
+### Less apps ?, I have made a configuration to run the apps of a proot distro in termux native desktop. An example:
 
 ```
 ./start-ubuntu.sh
-
 apt install firefox
-
 export DISPLAY=:1
-
 firefox 
 ```
 
-### puede ejecutar apps proot sin problemas
+### You can run proot apps without problems
 
 ![firefox](./fotos/proot-firefox.png) 
 ![libreoffice_load](./fotos/proot-libreoffice.png) 
 ![libreoffice_app](./fotos/proot-libreoffice2.png) 
 
-# instalación 
+# Installation
 
-⚠ Solo en termux 
+> NOTE: This only works on Termux. Do not try it on other linux terminal emulators.
 
 ```bash
 curl -sLf https://raw.githubusercontent.com/Yisus7u7/termux-desktop-xfce/main/boostrap.sh | bash
 ```
 
-> luego de eso solo espere, el script hará su trabajo 
+After that just have a cup of coffee... the script will do its job 
 
-# Uso 
-
-usa el comando :
-
-```
+# Usage
+Run:
+> Inside a proot-distro
+```bash
 vncserver -listen tcp 
 ```
+> No proot-distro
+```bash
+vncserver
+```
 
-Pará iniciar el servidor vnc, conectese a localhost:1
-O el puerto que haya indicado la terminal 
+# Some documentation
+If you're trying to launch an x application inside proot-distro and already did `export DISPLAY=:1` but gives you an error that says 
+`Unable to init server: Could not connect: Connection refused
+`
+, then login to proot-distro with
+```
+proot-distro login ubuntu --user (yourname) --shared-tmp
+```
+`(yourname)` would be something like `root` or your sudo name.
 
-Cualquier error, pregunta o sujerencia reportala en :
+# Starting XFCE
+To start the vnc server, connect to localhost: 1 Or the port indicated by the terminal.
+Any error, question or suggestion, report it in:
 https://github.com/Yisus7u7/termux-desktop-xfce/issues
 
 
-`Espero que te guste este pequeño trabajo,
-No olvides dejar tu 🌟 y compartir :3`
+I hope you like this little work, don't forget to leave your 🌟 and share: 3 
 
-Puedes donar a este pequeño proyecto en paypal
+You can donate to this little project in PayPal
 
-https://paypal.me/JesusChapman
-
-Se agradecerá 😉
+https://www.paypal.me/JesusChapman 
