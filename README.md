@@ -1,7 +1,16 @@
 # termux-desktop-xfce
 
-# ¡Atención!
- Actualmente estoy trabajando en una gran actualización para finales de este año (o incluso antes), ¡con grandes mejoras en la interfaz, temas y funciones geniales!
+# ¡Atención! / ¡Warning!
+
+This project will no longer be maintained, I currently have many occupations because I am going to enter the Air Force 🙏🏻.
+
+You can try additional projects like this:
+
+https://github.com/sabamdarif/termux-desktop
+
+It's a pretty cool project and pretty much accomplished everything I wanted to accomplish with this project.
+
+Possibly in the future I will contribute with things to that repository in my free space.
 
 ## Tareas
  - Rediseño en temas de la interfaz.
