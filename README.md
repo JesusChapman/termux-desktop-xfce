@@ -138,6 +138,6 @@ No olvides dejar tu 🌟 y compartir :3`
 
 Puedes donar a este pequeño proyecto en paypal
 
-https://paypal.me/JesusChapman
+https://paypal.me/JesusChapmanVlz
 
 Se agradecerá 😉
